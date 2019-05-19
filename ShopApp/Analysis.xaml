@@ -1,0 +1,51 @@
+﻿<Window x:Class="ShopApp.Analysis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopApp"
+        mc:Ignorable="d"
+        Title="Analiza wyników sprzedaży" Height="768" Width="1366" WindowState="Maximized" Loaded="Window_Loaded">
+    <Grid Background="White" Margin="-12,0,2,-20" Height="758" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="109*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Zestawienie " HorizontalAlignment="Left" Margin="116,63,0,0" VerticalAlignment="Top" Width="101" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <DatePicker x:Name="FirstDate" HorizontalAlignment="Left" Margin="188,179,0,0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.5,0.5" FontSize="14" Grid.Column="1"/>
+        <DatePicker x:Name="SecondDate" HorizontalAlignment="Left" Margin="188,225,0,0" VerticalAlignment="Top" Width="152" FontSize="14" Grid.Column="1"/>
+        <Label Content="Od" HorizontalAlignment="Left" Margin="129,177,0,0" VerticalAlignment="Top" FontSize="14" Width="40" Grid.Column="1"/>
+        <Label Content="Do" HorizontalAlignment="Left" Margin="129,223,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="1"/>
+        <DataGrid x:Name="AnalysisOfProducts" HorizontalAlignment="Left" Height="603" Margin="409,85,0,0" VerticalAlignment="Top" Width="446" Grid.Column="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Nr" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding Type}" Header="Rodzaj" Width="110" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding Name}" Header="Nazwa" Width="110" FontSize="16"/>
+                <DataGridTextColumn Binding="{Binding CountQuantity}" Header="ilość sprzedaży" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding CountProfit}" Header="łączny przychód" FontSize="16" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="AnalysisOfTypes" HorizontalAlignment="Left" Height="603" Margin="912,85,0,0" VerticalAlignment="Top" Width="369" Grid.Column="1" AutoGenerateColumns="False" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Type}" Header="Rodzaj" Width="140" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding CountQuantity}" Header="ilość sprzedaży" Width="100" FontSize="16"/>
+                <DataGridTextColumn Binding="{Binding CountProfit}" Header="łączny przychód" FontSize="16" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Analiza poszczególnych produktów" HorizontalAlignment="Left" Margin="480,46,0,0" VerticalAlignment="Top" Width="322" FontSize="18" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Analiza grup produktów" HorizontalAlignment="Left" Margin="983,46,0,0" VerticalAlignment="Top" Width="221" FontSize="18" FontWeight="Bold" Grid.Column="1"/>
+        <DataGrid x:Name="AnalysisOfEmployees" Grid.Column="1" HorizontalAlignment="Left" Height="363" Margin="0,325,0,0" VerticalAlignment="Top" Width="365" AutoGenerateColumns="False" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Nr pracownika" Width="25" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding Surname}" Header="Pracownik" Width="140" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding CountQuantity}" Header="ilość sprzedaży" Width="100" FontSize="16"/>
+                <DataGridTextColumn Binding="{Binding CountProfit}" Header="łączny przychód" FontSize="16" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="Header" Content="Analiza wyników sprzedży" Grid.Column="1" HorizontalAlignment="Left" Margin="422,10,0,0" VerticalAlignment="Top" Width="693" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="SelectTimeAnalysis" Content="Okresowe" Grid.Column="1" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Width="98" Height="43" Click="SelectTimeAnalysis_Click" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <Button x:Name="SelectAllAnalysis" Content="Całościowe" Grid.Column="1" HorizontalAlignment="Left" Margin="33,105,0,0" VerticalAlignment="Top" Width="267" Height="39" Click="SelectAllAnalysis_Click" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <Label Content="Analiza sprzedaży przez pracowników" HorizontalAlignment="Left" Margin="10,283,0,0" VerticalAlignment="Top" Width="345" FontSize="18" FontWeight="Bold" Grid.Column="1" Height="37"/>
+    </Grid>
+</Window>
+

@@ -1,0 +1,23 @@
+﻿<Window x:Class="ShopApp.EditEmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopApp"
+        mc:Ignorable="d"
+        Title="Okno edycji pracowników" Height="409" Width="628">
+    <Grid>
+        <Label Content="Id / Nr pracownika" HorizontalAlignment="Left" Margin="101,26,0,0" VerticalAlignment="Top" Width="164" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="IdT" HorizontalAlignment="Left" Height="29" Margin="270,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
+        <Label Content="Nazwisko i imię" HorizontalAlignment="Left" Margin="101,84,0,0" VerticalAlignment="Top" Width="164" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="SurnameT" HorizontalAlignment="Left" Height="29" Margin="270,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
+        <Label Content="Typ umowy" HorizontalAlignment="Left" Margin="101,138,0,0" VerticalAlignment="Top" Width="164" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="ContractT" HorizontalAlignment="Left" Height="29" Margin="270,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
+        <Label Content="Start pracy" HorizontalAlignment="Left" Margin="101,196,0,0" VerticalAlignment="Top" Width="164" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="StartT" HorizontalAlignment="Left" Height="29" Margin="270,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
+        <Label Content="Hasło" HorizontalAlignment="Left" Margin="101,250,0,0" VerticalAlignment="Top" Width="164" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="PasswordT" HorizontalAlignment="Left" Height="29" Margin="270,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
+        <Button x:Name="EditButton" Content="Dodaj / edytuj pracownika o danym numerze" HorizontalAlignment="Left" Margin="10,301,0,0" VerticalAlignment="Top" Width="313" Height="45" FontSize="14" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Click="EditButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Usuń pracownika o danym numerze" HorizontalAlignment="Left" Margin="343,301,0,0" VerticalAlignment="Top" Width="267" Height="45" FontSize="14" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Click="DeleteButton_Click"/>
+    </Grid>
+</Window>

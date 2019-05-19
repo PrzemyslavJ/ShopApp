@@ -1,0 +1,28 @@
+﻿<Window x:Class="ShopApp.Records"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopApp"
+        mc:Ignorable="d"
+        Title="Zestawienie wyników sprzedaży" Height="539" Width="1135.6" Loaded="Window_Loaded">
+    <Grid Margin="0,0,2,-20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="74*"/>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="936*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="SalesTable" HorizontalAlignment="Left" Height="469" Margin="25,10,0,0" VerticalAlignment="Top" Width="1061" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Nr sprzedaży" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding Type}" Header="Rodzaj produktu" Width="140" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding Name}" Header="Nazwa produktu" Width="220" FontSize="16"/>
+                <DataGridTextColumn Binding="{Binding PricePLN}" Header="Cena produktu (zł)" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding DateOfSale}" Header="data sprzedaży" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="Ilość" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding Profit}" Header="przychód ze sprzedaży (zł)" FontSize="16" />
+                <DataGridTextColumn Binding="{Binding Surname}" Header="pracownik sprzedający" FontSize="16" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
